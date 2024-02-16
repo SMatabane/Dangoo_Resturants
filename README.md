@@ -7,8 +7,8 @@ Dangoo API is a robust backend solution designed for my fictional Dangoo Restura
 ## Features
 - **NestJs Backend:**
   - RESTful API endpoints.
-  - User Management: Register new users, authenticate existing users, and manage user profiles.
--Menu Management: Create, update, and delete menu items, categories, and special offers.
--Order Processing: Handle customer orders, track order status, and manage order fulfillment.
--Notification System: Send real-time notifications to users regarding order updates, promotions, and events.
--Security: Implement secure authentication and authorization mechanisms to protect user data and system integrity.
+- **User Management**: Register new users, authenticate existing users, and manage user profiles.
+- **Menu Management**: Create, update, and delete menu items, categories, and special offers.
+- **Order Processing**: Handle customer orders, track order status, and manage order fulfillment.
+- **Notification System**: Send real-time notifications to users regarding order updates, promotions, and events.
+- **Security**: Implement secure authentication and authorization mechanisms to protect user data and system integrity.
