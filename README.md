@@ -1,7 +1,7 @@
 # Dangoo_Resturants
 Welcome to the Dangoo API, your restaurant's backend system built with NestJS!
 
-##Description
+## Description
 Dangoo API is a robust backend solution designed for my fictional Dangoo Resturant. From managing orders and menus to handling user authentication and notifications, Dangoo API provides the foundation for seamless operations and exceptional customer experiences.
 
 ## Features
