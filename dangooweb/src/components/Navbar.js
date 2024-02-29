@@ -12,7 +12,7 @@ function Navbar() {
          <img src={Logo} />
         <div className="hiddenLinks">
           <Link to="/"> Home </Link>
-         
+          <Link to="/management"> ItemManagement </Link>
           <Link to="/shop"> Shop </Link>
           <Link to="/track"> Tracking </Link>
           <Link to="/contact"> Contact </Link>
@@ -24,8 +24,9 @@ function Navbar() {
       <div className="rightSide">
         <Link to="/"> Home </Link>
         <Link to="/shop"> Shop </Link>
-        <Link to="/track"> Tracking </Link>
+       
         <Link to="/contact"> Contact </Link>
+       
         <Link to="/login" >Login</Link>
         <button className="btn btn-primary"><Link to="/login" className="nav-link">Login</Link></button>
                 
