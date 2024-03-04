@@ -7,9 +7,9 @@ export default function ViewItems() {
 
     const { id } = useParams();
     const [item, setItem] = useState({
-        name: "",
-        description: "",
-        price: "",
+      item_name: "",
+      unit_price: 0,
+      available_stock: 0,
       });
 
   
@@ -19,7 +19,7 @@ export default function ViewItems() {
   }, []);
 
   const loadItem = async () => {
-    const result = await axios.get(`http://localhost:8080/item/${id}`);
+    const result = await axios.get(`http://localhost:3001/items/${id}`);
     setItem(result.data);
   };
 
@@ -35,21 +35,25 @@ export default function ViewItems() {
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
                   <b>Name:</b>
-                  {item.name}
-                </li>
-                <li className="list-group-item">
-                  <b>Description:</b>
-                  {item.description}
+                  {item.item_name}
                 </li>
                 <li className="list-group-item">
                   <b>Price:</b>
-                  {item.price}
+                  {item.unit_price}
+                </li>
+                <li className="list-group-item">
+                  <b>Avaiable stock:</b>
+                  {item.available_stock}
+                </li>
+                <li className="list-group-item">
+                  <b>Amount Purchased:</b>
+                  {item.amount_purchased}
                 </li>
               </ul>
             </div>
           </div>
-          <Link className="btn btn-primary my-2" to={"/"}>
-            Back to Home
+          <Link className="btn btn-primary my-2" to={"/menus"}>
+            Back to Menus
           </Link>
         </div>
       </div>

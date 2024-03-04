@@ -4,55 +4,72 @@ import '../styles/login.css';
 import RegisterForm from "./Register";
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useHistory } from "react-router-dom";
+
 
 
 function Login() {
 
     let navigate = useNavigate();
 
-  const [user, setUser] = useState({
-    email: "",
-    password_hash: "",
-
+    const [email, setemail]= useState('');
+    const [password_hash, setpass]= useState('');
+   
     
-  });
 
-  const { email, password_hash} = user;
-  const onInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
+    async function onSubmit(event) {
+        event.preventDefault();
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    await axios.post("http://localhost:3001/users/login", user);
-    navigate("/");
-  };
+        try{
+          const res=  await axios.post("http://localhost:3001/users/login",
+            {
+                email:email,
+                password_hash:password_hash,
+               
+            });
+            const  user_type=res.data.user_type
+            if(user_type==='CUSTOMER'){alert("login successuflly");
+            navigate("/home");}
+            else {alert("Registered successuflly");
+            navigate("/menus");}
+            
+
+        }
+        catch(err){
+            alert(err)
+           
+        }
+
+
+        
+      };
+
+  
 
   return(
    
 	  <div className="login-container">
-            <form className="login-form" onSubmit={(e) => onSubmit(e)}>
+            <form className="login-form" >
                 <h2>Login</h2>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="text"  id="name" name="name" placeholder="Email"
-                     onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Email'"
+                    <input 
+                     type={"text"}  
+                     placeholder="Email"
+                     className="form-control"
+                     name="name" 
                       value={email}
-                      onChange={(e) => onInputChange(e)}
-                      />
+                      onChange={(e) =>setemail(e.target.value)}
+                    />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="text"  id="password" name="name" placeholder="password" 
-                    onfocus="this.placeholder = ''" 
-                    onblur="this.placeholder = 'password'"
+                    <input type={"password"}  id="password" name="name" placeholder="password" 
                     value={password_hash}
-                    onChange={(e) => onInputChange(e)}/>
+                    onChange={(e) => setpass(e.target.value)}/>
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary" onClick={onSubmit}>Login</button>
                 <p>Don't have an account? <label><Link to="/register">Register</Link></label></p>
             </form>
         </div>);
