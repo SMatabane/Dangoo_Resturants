@@ -19,7 +19,7 @@ export class ItemsService {
         return this.itemsRepository.findOneBy({id: id});
     }
 
-    async create(item: Item, file: multer.Multer.File): Promise<any> {
+    async create(item: Item): Promise<any> {
         try {
 
             const newItem = new Items();
@@ -27,7 +27,7 @@ export class ItemsService {
             newItem.item_name = item.item_name;
             newItem.unit_price = item.unit_price;
             newItem.available_stock = item.available_stock;
-            newItem.item_image = file.path;
+            
            
 
             return await this.itemsRepository.save(newItem);

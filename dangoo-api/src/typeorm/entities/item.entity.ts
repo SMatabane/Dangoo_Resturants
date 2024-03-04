@@ -14,8 +14,7 @@ export class Items {
   @Column('decimal', { precision: 10, scale: 2 })
   unit_price: number;
 
-  @Column('text', {nullable: true})
-  item_image: string;
+
 
   @Column()
   available_stock: number;

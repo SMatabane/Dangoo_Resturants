@@ -13,9 +13,8 @@ export class ItemsController {
 
 // CREATE
   @Post()
-  @UseInterceptors(FileInterceptor('item_image'))
   async create(@UploadedFile() file: multer.Multer.File, @Body() item: Item): Promise<Items[]> {
-    return this.itemsService.create(item, file);
+    return this.itemsService.create(item);
   }
 
   @Post('/update')
@@ -28,11 +27,7 @@ export class ItemsController {
   async findAll(): Promise<Items[]> {
     const items: Items[] = await this.itemsService.findAll();
 
-    items.forEach(item => {
-      if (item.item_image) {
-        item.item_image = item.item_image.toString();
-      }
-    });
+    
     return items;
   }
 
