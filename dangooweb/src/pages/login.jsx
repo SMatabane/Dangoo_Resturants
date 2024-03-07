@@ -1,7 +1,6 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles/login.css';
-import RegisterForm from "./Register";
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate,useHistory } from "react-router-dom";
@@ -29,7 +28,7 @@ function Login() {
             });
             const  user_type=res.data.user_type
             if(user_type==='CUSTOMER'){alert("login successuflly");
-            navigate("/home");}
+            navigate("/items");}
             else {alert("Registered successuflly");
             navigate("/menus");}
             

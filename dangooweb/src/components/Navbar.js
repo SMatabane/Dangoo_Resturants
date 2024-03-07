@@ -25,7 +25,7 @@ function Navbar() {
       <div className="rightSide">
         <Link to="/home"> Home </Link>
         <Link to="/shop"> Shop </Link>
-        <Link to="/about"> About </Link>
+        <Link to="/cart"> Cart </Link>
         <Link to="/track"> Tracking </Link>
         <Link to="/contact"> Contact </Link>
         

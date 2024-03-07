@@ -1,0 +1,25 @@
+.food-item{
+    background-color: #f0f8ff;
+    border: 1px solid #4682b4;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.food-details{
+    margin-bottom: 5px;
+}
+
+button{
+
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    background-color:#4169e1
+
+}

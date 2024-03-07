@@ -78,7 +78,7 @@ const onSubmit = async () => {
                 placeholder="Enter item  name"
                 name="item_name"
                 value={item_name}
-                onChange={(e) => onInputChange(e)}
+                onChange={(e) => setItem(e.target.value)}
               />
             </div>
             
@@ -92,7 +92,7 @@ const onSubmit = async () => {
                 placeholder="Enter price Item"
                 name="unit_price"
                 value={unit_price}
-                onChange= {(e) => onInputChange(e)}
+                onChange= {(e) => setItem(e.target.value)}
               />
             </div>
             <div className="mb-3">
@@ -105,7 +105,7 @@ const onSubmit = async () => {
                 placeholder="Enter available stcock"
                 name="available_stock"
                 value={available_stock}
-                onChange={(e) => onInputChange(e)}
+                onChange={(e) => setItem(e.target.value)}
               />
             </div>
             <button type="submit" onClick={onSubmit} className="btn btn-outline-primary">
