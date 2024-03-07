@@ -2,8 +2,7 @@ import {Body, Controller, Delete, Get, Param, Patch, Post, UploadedFile, UseInte
 import {ItemsService} from './items.service';
 import {Items} from 'src/typeorm/entities/item.entity';
 import {Item} from "../models/item.model";
-import {FileInterceptor} from "@nestjs/platform-express";
-import * as multer from 'multer';
+
 
 
 @Controller('items')
@@ -12,10 +11,10 @@ export class ItemsController {
   constructor(private readonly itemsService: ItemsService){}
 
 // CREATE
-  @Post()
-  async create(@UploadedFile() file: multer.Multer.File, @Body() item: Item): Promise<Items[]> {
-    return this.itemsService.create(item);
-  }
+@Post()
+async create( @Body() item: Item): Promise<Items[]> {
+  return this.itemsService.create(item);
+}
 
   @Post('/update')
   async updateItem(@Body() item: Item): Promise<Items> {
@@ -27,7 +26,7 @@ export class ItemsController {
   async findAll(): Promise<Items[]> {
     const items: Items[] = await this.itemsService.findAll();
 
-    
+  
     return items;
   }
 

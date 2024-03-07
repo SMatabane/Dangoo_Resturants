@@ -3,7 +3,6 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {Menus} from 'src/typeorm/entities/menu.entity';
 import {Repository, UpdateResult} from 'typeorm';
 import {Menu} from "../models/menu.model";
-import * as multer from 'multer';
 import {Items} from "../typeorm/entities/item.entity";
 
 @Injectable()

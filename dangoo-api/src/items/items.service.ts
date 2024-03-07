@@ -3,7 +3,7 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {Items} from 'src/typeorm/entities/item.entity';
 import {Repository} from 'typeorm';
 import {Item} from "../models/item.model";
-import * as multer from 'multer';
+
 
 
 @Injectable()
@@ -27,7 +27,7 @@ export class ItemsService {
             newItem.item_name = item.item_name;
             newItem.unit_price = item.unit_price;
             newItem.available_stock = item.available_stock;
-            
+        
            
 
             return await this.itemsRepository.save(newItem);
